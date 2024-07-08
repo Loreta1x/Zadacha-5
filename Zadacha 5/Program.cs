@@ -13,7 +13,7 @@ namespace Zadacha_5
             Garage garage = new Garage();
             while (true)
             {
-                Console.WriteLine("1. Add Customer");
+                Console.WriteLine("1. Добави нов клиент");
                 Console.WriteLine("2. Remove Customer");
                 Console.WriteLine("3. Search Customer By Name");
                 Console.WriteLine("4. List All Customers");
