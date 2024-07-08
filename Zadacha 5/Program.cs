@@ -14,21 +14,21 @@ namespace Zadacha_5
             while (true)
             {
                 Console.WriteLine("1. Добави нов клиент");
-                Console.WriteLine("2. Remove Customer");
-                Console.WriteLine("3. Search Customer By Name");
-                Console.WriteLine("4. List All Customers");
-                Console.WriteLine("5. Add Car");
-                Console.WriteLine("6. Remove Car");
-                Console.WriteLine("7. Search Car By Make");
-                Console.WriteLine("8. List All Cars");
-                Console.WriteLine("9. Add Mechanic");
-                Console.WriteLine("10. Remove Mechanic");
-                Console.WriteLine("11. Add Service");
-                Console.WriteLine("12. Remove Service");
-                Console.WriteLine("13. Add Repair Order");
-                Console.WriteLine("14. Complete Repair Order");
-                Console.WriteLine("15. Generate Service Report");
-                Console.WriteLine("16. Exit");
+                Console.WriteLine("2. Премахни клиент");
+                Console.WriteLine("3. Търси клиент според името");
+                Console.WriteLine("4. Виж всички клиенти");
+                Console.WriteLine("5. Добави кола");
+                Console.WriteLine("6. Премахни кола");
+                Console.WriteLine("7. Търси кола според марката");
+                Console.WriteLine("8. Виж всички коли");
+                Console.WriteLine("9. Добави механик");
+                Console.WriteLine("10. Премахни механик");
+                Console.WriteLine("11. Добави услуга");
+                Console.WriteLine("12. Премахни услуга");
+                Console.WriteLine("13. Добави поръчка");
+                Console.WriteLine("14. Завърши поръчка");
+                Console.WriteLine("15. Генерирай отчет");
+                Console.WriteLine("16. Изход");
 
                 int choice = int.Parse(Console.ReadLine());
 
