@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Spectre.Console;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
 using System.Linq;
@@ -29,14 +30,9 @@ namespace Zadacha_5
         {
             return Customers.FirstOrDefault(c => c.FullName == name);
         }
+        public List<Customer> GetAllCustomers() => Customers;
 
-        public void ListAllCustomers()
-        {
-            foreach (var customer in Customers)
-            {
-                Console.WriteLine($"Customer ID: {customer.CustomerID}, Name: {customer.FullName}, Phone: {customer.PhoneNumber}, Email: {customer.Email}");
-            }
-        }
+        public void ListAllCustomers() => DisplayCustomersAsTable(Customers);
 
         public void AddCar (Car car)
         {
@@ -53,13 +49,9 @@ namespace Zadacha_5
             return Cars.Where(c => c.Make == make).ToList();
         }
 
-        public void ListAllCars()
-        {
-            foreach(var car in Cars)
-            {
-                Console.WriteLine($"Car ID: {car.CarID}, Make: {car.Make}, Model: {car.Model}, Year: {car.Year}, Customer ID: {car.CustomerID}");
-            }
-        }
+        public List<Car> GetAllCars() => Cars;
+
+        public void ListAllCars() => DisplayCarsAsTable(Cars);
 
         public void AddMechanic(Mechanic mechanic)
         {
@@ -101,6 +93,38 @@ namespace Zadacha_5
             {
                 Console.WriteLine($"Order ID: {order.OrderID}, Total Price: {order.TotalPrice}, Date: {order.OrderDate}");
             }
+        }
+        public void DisplayCustomersAsTable(List<Customer> customers)
+        {
+            var table = new Spectre.Console.Table();
+            table.AddColumn("Customer ID");
+            table.AddColumn("Full Name");
+            table.AddColumn("Phone Number");
+            table.AddColumn("Email");
+
+            foreach (var customer in customers)
+            {
+                table.AddRow(customer.CustomerID, customer.FullName, customer.PhoneNumber, customer.Email);
+            }
+
+            Spectre.Console.AnsiConsole.Write(table);
+        }
+
+        public void DisplayCarsAsTable(List<Car> cars)
+        {
+            var table = new Spectre.Console.Table();
+            table.AddColumn("Car ID");
+            table.AddColumn("Make");
+            table.AddColumn("Model");
+            table.AddColumn("Year");
+            table.AddColumn("Customer ID");
+
+            foreach (var car in cars)
+            {
+                table.AddRow(car.CarID, car.Make, car.Model, car.Year.ToString(), car.CustomerID);
+            }
+
+            Spectre.Console.AnsiConsole.Write(table);
         }
 
     }

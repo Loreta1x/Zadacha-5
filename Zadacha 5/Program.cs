@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Spectre.Console;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -65,7 +66,7 @@ namespace Zadacha_5
                         }
                         break;
                     case 4:
-                        garage.ListAllCustomers();
+                        garage.DisplayCustomersAsTable(garage.GetAllCustomers());
                         break;
                     case 5:
                         Console.WriteLine("Въведи Car ID:");
@@ -96,7 +97,7 @@ namespace Zadacha_5
                         }
                         break;
                     case 8:
-                        garage.ListAllCars();
+                        garage.DisplayCarsAsTable(garage.GetAllCars());
                         break;
                     case 9:
                         Console.WriteLine("Въведи Mechanic ID:");
