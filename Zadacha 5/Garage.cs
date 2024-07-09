@@ -91,16 +91,16 @@ namespace Zadacha_5
         {
             foreach(var order in RepairOrders.Where(o => o.IsCompleted))
             {
-                Console.WriteLine($"Order ID: {order.OrderID}, Total Price: {order.TotalPrice}, Date: {order.OrderDate}");
+                Console.WriteLine($"Order ID: {order.OrderID}, Обща сума: {order.TotalPrice}, Дата: {order.OrderDate}");
             }
         }
         public void DisplayCustomersAsTable(List<Customer> customers)
         {
             var table = new Spectre.Console.Table();
             table.AddColumn("Customer ID");
-            table.AddColumn("Full Name");
-            table.AddColumn("Phone Number");
-            table.AddColumn("Email");
+            table.AddColumn("Пълно име");
+            table.AddColumn("Тел. номер");
+            table.AddColumn("Имейл");
 
             foreach (var customer in customers)
             {
@@ -114,9 +114,9 @@ namespace Zadacha_5
         {
             var table = new Spectre.Console.Table();
             table.AddColumn("Car ID");
-            table.AddColumn("Make");
-            table.AddColumn("Model");
-            table.AddColumn("Year");
+            table.AddColumn("Mарка");
+            table.AddColumn("Mодел");
+            table.AddColumn("Година");
             table.AddColumn("Customer ID");
 
             foreach (var car in cars)
