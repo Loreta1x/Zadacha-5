@@ -35,113 +35,113 @@ namespace Zadacha_5
                 switch (choice)
                 {
                     case 1:
-                        Console.WriteLine("Enter Customer ID:");
+                        Console.WriteLine("Въведи Customer ID:");
                         string customerID = Console.ReadLine();
-                        Console.WriteLine("Enter Full Name:");
+                        Console.WriteLine("Въведи пълно име:");
                         string fullName = Console.ReadLine();
-                        Console.WriteLine("Enter Phone Number:");
+                        Console.WriteLine("Въведи тел. номер:");
                         string phoneNumber = Console.ReadLine();
-                        Console.WriteLine("Enter Email:");
+                        Console.WriteLine("Въведи имейл:");
                         string email = Console.ReadLine();
                         Customer customer = new Customer(customerID, fullName, phoneNumber, email);
                         garage.AddCustomer(customer);
                         break;
                     case 2:
-                        Console.WriteLine("Enter Customer ID:");
+                        Console.WriteLine("Въведи Customer ID:");
                         string removeCustomerID = Console.ReadLine();
                         garage.RemoveCustomer(removeCustomerID);
                         break;
                     case 3:
-                        Console.WriteLine("Enter Customer Name:");
+                        Console.WriteLine("Въведи името на клиента:");
                         string searchName = Console.ReadLine();
                         var foundCustomer = garage.SearchCustomerByName(searchName);
                         if (foundCustomer != null)
                         {
-                            Console.WriteLine($"Customer ID: {foundCustomer.CustomerID}, Name: {foundCustomer.FullName}, Phone: {foundCustomer.PhoneNumber}, Email: {foundCustomer.Email}");
+                            Console.WriteLine($"Customer ID: {foundCustomer.CustomerID}, Име: {foundCustomer.FullName}, Тел. номер: {foundCustomer.PhoneNumber}, Имейл: {foundCustomer.Email}");
                         }
                         else
                         {
-                            Console.WriteLine("Customer not found.");
+                            Console.WriteLine("Клиентът не е намерен.");
                         }
                         break;
                     case 4:
                         garage.ListAllCustomers();
                         break;
                     case 5:
-                        Console.WriteLine("Enter Car ID:");
+                        Console.WriteLine("Въведи Car ID:");
                         string carID = Console.ReadLine();
-                        Console.WriteLine("Enter Make:");
+                        Console.WriteLine("Въведи марка:");
                         string make = Console.ReadLine();
-                        Console.WriteLine("Enter Model:");
+                        Console.WriteLine("Въведи модел:");
                         string model = Console.ReadLine();
-                        Console.WriteLine("Enter Year:");
+                        Console.WriteLine("Въведи година:");
                         int year = int.Parse(Console.ReadLine());
-                        Console.WriteLine("Enter Customer ID:");
+                        Console.WriteLine("Въведи Customer ID:");
                         string carCustomerID = Console.ReadLine();
                         Car car = new Car(carID, make, model, year, carCustomerID);
                         garage.AddCar(car);
                         break;
                     case 6:
-                        Console.WriteLine("Enter Car ID:");
+                        Console.WriteLine("Въведи Car ID:");
                         string removeCarID = Console.ReadLine();
                         garage.RemoveCar(removeCarID);
                         break;
                     case 7:
-                        Console.WriteLine("Enter Car Make:");
+                        Console.WriteLine("Въведи марката на автомобила:");
                         string carMake = Console.ReadLine();
                         var carsByMake = garage.SearchCarByMake(carMake);
                         foreach (var c in carsByMake)
                         {
-                            Console.WriteLine($"Car ID: {c.CarID}, Make: {c.Make}, Model: {c.Model}, Year: {c.Year}, Customer ID: {c.CustomerID}");
+                            Console.WriteLine($"Car ID: {c.CarID}, Марка: {c.Make}, Mодел: {c.Model}, Година: {c.Year}, Customer ID: {c.CustomerID}");
                         }
                         break;
                     case 8:
                         garage.ListAllCars();
                         break;
                     case 9:
-                        Console.WriteLine("Enter Mechanic ID:");
+                        Console.WriteLine("Въведи Mechanic ID:");
                         string mechanicID = Console.ReadLine();
-                        Console.WriteLine("Enter Full Name:");
+                        Console.WriteLine("Въведи пълно име:");
                         string mechanicName = Console.ReadLine();
-                        Console.WriteLine("Enter Specialization:");
+                        Console.WriteLine("Въведи специализация:");
                         string specialization = Console.ReadLine();
                         Mechanic mechanic = new Mechanic(mechanicID, mechanicName, specialization);
                         garage.AddMechanic(mechanic);
                         break;
                     case 10:
-                        Console.WriteLine("Enter Mechanic ID:");
+                        Console.WriteLine("Въведи Mechanic ID:");
                         string removeMechanicID = Console.ReadLine();
                         garage.RemoveMechanic(removeMechanicID);
                         break;
                     case 11:
-                        Console.WriteLine("Enter Service ID:");
+                        Console.WriteLine("Въведи Service ID:");
                         string serviceID = Console.ReadLine();
-                        Console.WriteLine("Enter Description:");
+                        Console.WriteLine("Въведи описание на услугата:");
                         string description = Console.ReadLine();
-                        Console.WriteLine("Enter Price:");
+                        Console.WriteLine("Въведи цена:");
                         decimal price = decimal.Parse(Console.ReadLine());
                         Service service = new Service(serviceID, description, price);
                         garage.AddService(service);
                         break;
                     case 12:
-                        Console.WriteLine("Enter Service ID:");
+                        Console.WriteLine("Въведи Service ID:");
                         string removeServiceID = Console.ReadLine();
                         garage.RemoveService(removeServiceID);
                         break;
                     case 13:
-                        Console.WriteLine("Enter Order ID:");
+                        Console.WriteLine("Въведи Order ID:");
                         string orderID = Console.ReadLine();
-                        Console.WriteLine("Enter Car ID:");
+                        Console.WriteLine("Въведи Car ID:");
                         string orderCarID = Console.ReadLine();
-                        Console.WriteLine("Enter Mechanic ID:");
+                        Console.WriteLine("Въведи Mechanic ID:");
                         string orderMechanicID = Console.ReadLine();
                         List<Service> orderServices = new List<Service>();
                         decimal totalPrice = 0;
                         while (true)
                         {
-                            Console.WriteLine("Enter Service ID to add (or 'done' to finish):");
+                            Console.WriteLine("Въведи Service ID за да добавиш (или 'край' за да приключиш):");
                             string serviceIDToAdd = Console.ReadLine();
-                            if (serviceIDToAdd.ToLower() == "done")
+                            if (serviceIDToAdd.ToLower() == "край")
                                 break;
                             Service foundService = garage.Services.FirstOrDefault(s => s.ServiceID == serviceIDToAdd);
                             if (foundService != null)
@@ -151,7 +151,7 @@ namespace Zadacha_5
                             }
                             else
                             {
-                                Console.WriteLine("Service not found.");
+                                Console.WriteLine("Услугата не е намерена");
                             }
                         }
                         DateTime orderDate = DateTime.Now;
@@ -159,7 +159,7 @@ namespace Zadacha_5
                         garage.AddRepairOrder(order);
                         break;
                     case 14:
-                        Console.WriteLine("Enter Order ID:");
+                        Console.WriteLine("Въведи Order ID:");
                         string completeOrderID = Console.ReadLine();
                         garage.CompleteRepairOrder(completeOrderID);
                         break;
