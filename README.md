@@ -96,7 +96,7 @@
 
 * Връзка към кода:
 
-[Source Code](Rock_paper_Scissors.py)
+[Source Code](Zadacha 5/Program.cs)
 
 
 
