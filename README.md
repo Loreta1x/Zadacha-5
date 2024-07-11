@@ -96,7 +96,7 @@
 
 * Връзка към кода:
 
-[Source Code](Zadacha 5)
+[Source Code](Zadacha 5/Program.cs)
 
 
 
